@@ -166,15 +166,67 @@ https://templatemo.com/tm-590-topic-listing
 
                                             <a href="topics-detail.html" class="btn custom-btn mt-3 mt-lg-4">View</a>
                                         </div>
+                                        <div class="col-lg-8 col-12 mt-3 mx-auto">
+                                            <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
+                                                <div class="d-flex">
+                                                   
+                
+                                                    <div class="custom-block-topics-listing-info d-flex">
+                                                        <div>
+                                                            
+                                                            
+                                                            <h2>Filter Requested Clothes</h2>
 
+                                                            <form action="/filter-clothes" method="get">
+                                                                <!-- Filter by Age Group -->
+                                                                <label for="age-group">Age Group:</label>
+                                                                <select id="age-group" name="age_group">
+                                                                    <option value="all">All</option>
+                                                                    <option value="infants">Infants (0-2 years)</option>
+                                                                    <option value="children">Children (3-12 years)</option>
+                                                                    <option value="teens">Teens (13-19 years)</option>
+                                                                    <option value="adults">Adults</option>
+                                                                    <option value="seniors">Seniors</option>
+                                                                </select>
+                                                            </br>
+                                                                <!-- Filter by Gender -->
+                                                                <label for="gender">Gender:</label>
+                                                                <select id="gender" name="gender">
+                                                                    <option value="all">All</option>
+                                                                    <option value="male">Male</option>
+                                                                    <option value="female">Female</option>
+                                                                    <option value="unisex">Unisex</option>
+                                                                </select>
+                                                            </br>
+                                                                <!-- Filter by Season -->
+                                                                <label for="season">Season:</label>
+                                                                <select id="season" name="season">
+                                                                    <option value="all">All</option>
+                                                                    <option value="winter">Winter</option>
+                                                                    <option value="spring">Spring</option>
+                                                                    <option value="summer">Summer</option>
+                                                                    <option value="autumn">Autumn</option>
+                                                                </select>
+
+                                                            </form>
+                
+                                                            <p class="mb-0"></p>
+                
+                                                            <a href="topics-detail.html" class="btn custom-btn mt-3 mt-lg-4">Filter</a>
+                                                        </div>
+                
+                                                     
+                                                    </div>
+                                                </div>
+                                            </div>
 
                                     </div>
                                 </div>
                             </div>
 
-                            <h2>Items:</h2>
+                            
                         </div>
-
+                        <h2>Items:</h2>
                         <div class="col-lg-12 col-12">
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination justify-content-center mb-0">
