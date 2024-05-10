@@ -1,367 +1,241 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <meta name="description" content="">
-        <meta name="author" content="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Donation Requests Page</title>
 
-        <title>Topic Listing Page</title>
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap"
+        rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/templatemo-topic-listing.css" rel="stylesheet">
 
-        <!-- CSS FILES -->        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
 
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
-                        
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+<body class="topics-listing-page" id="top">
 
-        <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <main>
 
-        <link href="css/templatemo-topic-listing.css" rel="stylesheet">
-<!--
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <i class="bi-back"></i>
+                    <span>DonApp</span>
+                </a>
 
-TemplateMo 590 topic listing
+                <div class="d-lg-none ms-auto me-4">
+                    <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+                </div>
 
-https://templatemo.com/tm-590-topic-listing
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
--->
-    </head>
-    
-    <body class="topics-listing-page" id="top">
-
-        <main>
-
-            <nav class="navbar navbar-expand-lg">
-                <div class="container">
-                    <a class="navbar-brand" href="index.html">
-                        <i class="bi-back"></i>
-                        <span>DonApp</span>
-                    </a>
-
-                    <div class="d-lg-none ms-auto me-4">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_1">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_2">Browse Topics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_3">How it Works</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_4">FAQs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_5">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="d-none d-lg-block">
                         <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
                     </div>
-    
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-    
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-lg-5 me-lg-auto">
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="index.html#section_1">Home</a>
-                            </li>
+                </div>
+            </div>
+        </nav>
 
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="index.html#section_2">Browse Topics</a>
-                            </li>
-    
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="index.html#section_3">How it works</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="index.html#section_4">FAQs</a>
-                            </li>
-    
-                            <li class="nav-item">
-                                <a class="nav-link click-scroll" href="index.html#section_5">Contact</a>
-                            </li>
-
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#section_5" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
-
-                                <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
-                                    <li><a class="dropdown-item active" href="topics-listing.html">Topics Listing</a></li>
-
-                                    <li><a class="dropdown-item" href="contact.html">Contact Form</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-
-                        <div class="d-none d-lg-block">
-                            <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
-                        </div>
+        <header class="site-header d-flex flex-column justify-content-center align-items-center">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 col-12">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Homepage</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Donation Requests</li>
+                            </ol>
+                        </nav>
+                        <h2 class="text-white">Donation Requests</h2>
                     </div>
                 </div>
-            </nav>
+            </div>
+        </header>
 
-
-            <header class="site-header d-flex flex-column justify-content-center align-items-center">
-                <div class="container">
-                    <div class="row align-items-center">
-
-                        <div class="col-lg-5 col-12">
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Homepage</a></li>
-
-                                    <li class="breadcrumb-item active" aria-current="page">Topics Listing</li>
-                                </ol>
-                            </nav>
-
-                            <h2 class="text-white">Topics Listing</h2>
-                        </div>
-
-                    </div>
-                </div>
-            </header>
-
-
-            <section class="section-padding">
-                <div class="container">
-                    <div class="row">
-
-                    <div>
-                  
-                    </br>
-                        
-                        </br>
-                        
-                        </form>
-                           </div> 
-                        <div class="col-lg-8 col-12 mt-3 mx-auto">
-                            <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
-                                <div class="d-flex">
-                                    <img src="images/topics/undraw_Remote_design_team_re_urdx.png" class="custom-block-image img-fluid" alt="">
-
-                                    <div class="custom-block-topics-listing-info d-flex">
-                                        <div>
-                                            <h5 class="mb-2">Search by Keywords:</h5>
-                                            
-                                            <input type="text" id="search-keywords" name="keywords" placeholder="Enter keywords">
-
-                                            <p class="mb-0"></p>
-
-                                            <a href="topics-detail.html" class="btn custom-btn mt-3 mt-lg-4">Search</a>
-                                        </div>
-
-                                     
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
-                                <div class="d-flex">
-                                    <img src="images/topics/undraw_online_ad_re_ol62.png" class="custom-block-image img-fluid" alt="">
-
-                                    <div class="custom-block-topics-listing-info d-flex">
-                                        <div>
-                                            <h5 class="mb-2">Search by Category</h5>
-                                            <form action="/search-items" method="get">
-                                                <!-- Category Dropdown for Filtering -->
-                                                <label for="category-filter">Choose a Category:</label>
-                                                <select id="category-filter" name="category">
-                                                    <option value="clothes">Clothes</option>
-                                                    <option value="toys">Toys</option>
-                                                    <option value="food">Food</option>
-                                                    <option value="medical-supplies">Medical Supplies</option>
-                                                    <option value="school-supplies">School Supplies</option>
-                                                    <option value="blood-donations">Blood Donations</option>
-                                                </select>
-                                            </br>
-
-                                            <a href="topics-detail.html" class="btn custom-btn mt-3 mt-lg-4">View</a>
-                                        </div>
-                                        <div class="col-lg-8 col-12 mt-3 mx-auto">
-                                            <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
-                                                <div class="d-flex">
-                                                   
-                
-                                                    <div class="custom-block-topics-listing-info d-flex">
-                                                        <div>
-                                                            
-                                                            
-                                                            <h2>Filter Requested Clothes</h2>
-
-                                                            <form action="/filter-clothes" method="get">
-                                                                <!-- Filter by Age Group -->
-                                                                <label for="age-group">Age Group:</label>
-                                                                <select id="age-group" name="age_group">
-                                                                    <option value="all">All</option>
-                                                                    <option value="infants">Infants (0-2 years)</option>
-                                                                    <option value="children">Children (3-12 years)</option>
-                                                                    <option value="teens">Teens (13-19 years)</option>
-                                                                    <option value="adults">Adults</option>
-                                                                    <option value="seniors">Seniors</option>
-                                                                </select>
-                                                            </br>
-                                                                <!-- Filter by Gender -->
-                                                                <label for="gender">Gender:</label>
-                                                                <select id="gender" name="gender">
-                                                                    <option value="all">All</option>
-                                                                    <option value="male">Male</option>
-                                                                    <option value="female">Female</option>
-                                                                    <option value="unisex">Unisex</option>
-                                                                </select>
-                                                            </br>
-                                                                <!-- Filter by Season -->
-                                                                <label for="season">Season:</label>
-                                                                <select id="season" name="season">
-                                                                    <option value="all">All</option>
-                                                                    <option value="winter">Winter</option>
-                                                                    <option value="spring">Spring</option>
-                                                                    <option value="summer">Summer</option>
-                                                                    <option value="autumn">Autumn</option>
-                                                                </select>
-
-                                                            </form>
-                
-                                                            <p class="mb-0"></p>
-                
-                                                            <a href="topics-detail.html" class="btn custom-btn mt-3 mt-lg-4">Filter</a>
-                                                        </div>
-                
-                                                     
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            
-                        </div>
-                        <h2>Items:</h2>
-                        <div class="col-lg-12 col-12">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination justify-content-center mb-0">
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Previous">
-                                            <span aria-hidden="true">Prev</span>
-                                        </a>
-                                    </li>
-
-                                    <li class="page-item active" aria-current="page">
-                                        <a class="page-link" href="#">1</a>
-                                    </li>
-                                    
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">2</a>
-                                    </li>
-                                    
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">3</a>
-                                    </li>
-
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">4</a>
-                                    </li>
-
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">5</a>
-                                    </li>
-                                    
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Next">
-                                            <span aria-hidden="true">Next</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="section-padding section-bg">
-                <div class="container">
-                    <div class="row">
-
-                        
-
-                        <div class="col-lg-6 col-md-6 col-12 mt-lg-3">
-                           
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-        </main>
-
-		<footer class="site-footer section-padding">
+        <section class="section-padding">
             <div class="container">
                 <div class="row">
-
-                    <div class="col-lg-3 col-12 mb-4 pb-2">
-                        <a class="navbar-brand mb-2" href="index.html">
-                            <i class="bi-back"></i>
-                            <span>Topic</span>
-                        </a>
+                    <div class="col-lg-12 col-12 text-center">
+                        <h3 class="mb-4">Donation Requests by Category</h3>
                     </div>
 
-                    <div class="col-lg-3 col-md-4 col-6">
-                        <h6 class="site-footer-title mb-3">Resources</h6>
+                    <!-- Clothes Donation Requests -->
+                    <div class="col-lg-6 col-12 mt-3 mx-auto">
+                        <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
+                            <div class="d-flex">
+                                <img src="images/topics/clothes.png" class="custom-block-image img-fluid" alt="">
 
-                        <ul class="site-footer-links">
-                            <li class="site-footer-link-item">
-                                <a href="#" class="site-footer-link">Home</a>
-                            </li>
-
-                            <li class="site-footer-link-item">
-                                <a href="#" class="site-footer-link">How it works</a>
-                            </li>
-
-                            <li class="site-footer-link-item">
-                                <a href="#" class="site-footer-link">FAQs</a>
-                            </li>
-
-                            <li class="site-footer-link-item">
-                                <a href="#" class="site-footer-link">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
-                        <h6 class="site-footer-title mb-3">Information</h6>
-
-                        <p class="text-white d-flex mb-1">
-                            <a href="tel: 305-240-9671" class="site-footer-link">
-                                305-240-9671
-                            </a>
-                        </p>
-
-                        <p class="text-white d-flex">
-                            <a href="mailto:info@company.com" class="site-footer-link">
-                                info@company.com
-                            </a>
-                        </p>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-12 mt-4 mt-lg-0 ms-auto">
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            English</button>
-
-                            <ul class="dropdown-menu">
-                                <li><button class="dropdown-item" type="button">Thai</button></li>
-
-                                <li><button class="dropdown-item" type="button">Myanmar</button></li>
-
-                                <li><button class="dropdown-item" type="button">Arabic</button></li>
-                            </ul>
+                                <div class="custom-block-topics-listing-info d-flex">
+                                    <div>
+                                        <h5 class="mb-2">Clothes Donation Requests</h5>
+                                        <p class="mb-0">Find clothing items requested for donation based on age, gender, and season.</p>
+                                        <a href="clothes-requests.html" class="btn custom-btn mt-3 mt-lg-4">Learn More</a>
+                                    </div>
+                                    <span class="badge bg-clothes rounded-pill ms-auto">50</span>
+                                </div>
+                            </div>
                         </div>
+                    </div>
 
-                        <p class="copyright-text mt-lg-5 mt-4">Copyright © 2048 Topic Listing Center. All rights reserved.
-                        <br><br>Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
-                        
+                    <!-- School Supplies Donation Requests -->
+                    <div class="col-lg-6 col-12 mt-3 mx-auto">
+                        <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
+                            <div class="d-flex">
+                                <img src="images/topics/school-supplies.png" class="custom-block-image img-fluid" alt="">
+
+                                <div class="custom-block-topics-listing-info d-flex">
+                                    <div>
+                                        <h5 class="mb-2">School Supplies Donation Requests</h5>
+                                        <p class="mb-0">Filter and find requested educational supplies like books and stationery.</p>
+                                        <a href="school-supplies-requests.html" class="btn custom-btn mt-3 mt-lg-4">Learn More</a>
+                                    </div>
+                                    <span class="badge bg-supplies rounded-pill ms-auto">40</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Toy Donation Requests -->
+                    <div class="col-lg-6 col-12 mt-3 mx-auto">
+                        <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
+                            <div class="d-flex">
+                                <img src="images/topics/toys.png" class="custom-block-image img-fluid" alt="">
+
+                                <div class="custom-block-topics-listing-info d-flex">
+                                    <div>
+                                        <h5 class="mb-2">Toy Donation Requests</h5>
+                                        <p class="mb-0">View and filter requested toys by age, gender, and category.</p>
+                                        <a href="toy-requests.html" class="btn custom-btn mt-3 mt-lg-4">Learn More</a>
+                                    </div>
+                                    <span class="badge bg-toys rounded-pill ms-auto">30</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Food Donation Requests -->
+                    <div class="col-lg-6 col-12 mt-3 mx-auto">
+                        <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
+                            <div class="d-flex">
+                                <img src="images/topics/food.png" class="custom-block-image img-fluid" alt="">
+
+                                <div class="custom-block-topics-listing-info d-flex">
+                                    <div>
+                                        <h5 class="mb-2">Food Donation Requests</h5>
+                                        <p class="mb-0">Filter and find requested food items by type and nutritional needs.</p>
+                                        <a href="food-requests.html" class="btn custom-btn mt-3 mt-lg-4">Learn More</a>
+                                    </div>
+                                    <span class="badge bg-food rounded-pill ms-auto">45</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Medical Supplies Donation Requests -->
+                    <div class="col-lg-6 col-12 mt-3 mx-auto">
+                        <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
+                            <div class="d-flex">
+                                <img src="images/topics/medical-supplies.png" class="custom-block-image img-fluid" alt="">
+
+                                <div class="custom-block-topics-listing-info d-flex">
+                                    <div>
+                                        <h5 class="mb-2">Medical Supplies Donation Requests</h5>
+                                        <p class="mb-0">Find and donate medical equipment, devices, and medications required by the community.</p>
+                                        <a href="medical-supplies-requests.html" class="btn custom-btn mt-3 mt-lg-4">Learn More</a>
+                                    </div>
+                                    <span class="badge bg-medical rounded-pill ms-auto">35</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
             </div>
-        </footer>
+        </section>
 
-        <!-- JAVASCRIPT FILES -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/jquery.sticky.js"></script>
-        <script src="js/custom.js"></script>
+    </main>
 
-    </body>
+    <footer class="site-footer section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-12 mb-4 pb-2">
+                    <a class="navbar-brand mb-2" href="index.html">
+                        <i class="bi-back"></i>
+                        <span>DonApp</span>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <h6 class="site-footer-title mb-3">Resources</h6>
+                    <ul class="site-footer-links">
+                        <li class="site-footer-link-item"><a href="#" class="site-footer-link">Home</a></li>
+                        <li class="site-footer-link-item"><a href="#" class="site-footer-link">How it Works</a></li>
+                        <li class="site-footer-link-item"><a href="#" class="site-footer-link">FAQs</a></li>
+                        <li class="site-footer-link-item"><a href="#" class="site-footer-link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
+                    <h6 class="site-footer-title mb-3">Information</h6>
+                    <p class="text-white d-flex mb-1">
+                        <a href="tel:305-240-9671" class="site-footer-link">305-240-9671</a>
+                    </p>
+                    <p class="text-white d-flex">
+                        <a href="mailto:info@company.com" class="site-footer-link">info@company.com</a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-12 mt-4 mt-lg-0 ms-auto">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">English</button>
+                        <ul class="dropdown-menu">
+                            <li><button class="dropdown-item" type="button">Thai</button></li>
+                            <li><button class="dropdown-item" type="button">Myanmar</button></li>
+                            <li><button class="dropdown-item" type="button">Arabic</button></li>
+                        </ul>
+                    </div>
+                    <p class="copyright-text mt-lg-5 mt-4">Copyright © 2048 Donation Center. All rights reserved.
+                        <br><br>Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/custom.js"></script>
+
+</body>
+
 </html>
