@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Clothes Donation Requests</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/templatemo-topic-listing.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <header class="site-header d-flex flex-column justify-content-center align-items-center">
+            <h2>Clothes Donation Requests</h2>
+        </header>
+
+        <main class="container">
+            <form id="clothes-filter" class="mb-4">
+                <label for="age-group">Age Group:</label>
+                <select id="age-group">
+                    <option value="all">All</option>
+                    <option value="children">Children</option>
+                    <option value="adults">Adults</option>
+                </select>
+
+                <label for="gender">Gender:</label>
+                <select id="gender">
+                    <option value="all">All</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <label for="season">Season:</label>
+                <select id="season">
+                    <option value="all">All</option>
+                    <option value="summer">Summer</option>
+                    <option value="winter">Winter</option>
+                </select>
+
+                <button type="button" onclick="filterClothes()">Filter</button>
+            </form>
+
+            <ul id="clothes-list">
+                <!-- Example clothing items (at least 8) -->
+                <li class="clothes-item" data-age="children" data-gender="male" data-season="winter">
+                    Boys' Winter Jacket (Children, Male, Winter)
+                </li>
+                <li class="clothes-item" data-age="children" data-gender="female" data-season="summer">
+                    Girls' Summer Dress (Children, Female, Summer)
+                </li>
+                <li class="clothes-item" data-age="adults" data-gender="male" data-season="winter">
+                    Men's Winter Coat (Adults, Male, Winter)
+                </li>
+                <li class="clothes-item" data-age="adults" data-gender="female" data-season="summer">
+                    Women's Summer Skirt (Adults, Female, Summer)
+                </li>
+                <li class="clothes-item" data-age="children" data-gender="male" data-season="summer">
+                    Boys' T-shirt (Children, Male, Summer)
+                </li>
+                <li class="clothes-item" data-age="adults" data-gender="female" data-season="winter">
+                    Women's Winter Sweater (Adults, Female, Winter)
+                </li>
+                <li class="clothes-item" data-age="children" data-gender="female" data-season="winter">
+                    Girls' Sweater (Children, Female, Winter)
+                </li>
+                <li class="clothes-item" data-age="adults" data-gender="male" data-season="summer">
+                    Men's Polo Shirt (Adults, Male, Summer)
+                </li>
+            </ul>
+        </main>
+
+        <script>
+            function filterClothes() {
+                const ageGroup = document.getElementById('age-group').value;
+                const gender = document.getElementById('gender').value;
+                const season = document.getElementById('season').value;
+                const items = document.querySelectorAll('.clothes-item');
+
+                items.forEach(item => {
+                    const age = item.getAttribute('data-age');
+                    const itemGender = item.getAttribute('data-gender');
+                    const itemSeason = item.getAttribute('data-season');
+
+                    const matchAge = ageGroup === 'all' || ageGroup === age;
+                    const matchGender = gender === 'all' || gender === itemGender;
+                    const matchSeason = season === 'all' || season === itemSeason;
+
+                    if (matchAge && matchGender && matchSeason) {
+                        item.style.display = 'list-item';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>
