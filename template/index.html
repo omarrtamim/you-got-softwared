@@ -29,6 +29,7 @@ https://templatemo.com/tm-590-topic-listing
 
 -->
     </head>
+    
     <body id="top">
 
         <main>
@@ -41,8 +42,8 @@ https://templatemo.com/tm-590-topic-listing
                     </a>
 
                     <div class="d-lg-none ms-auto me-4">
-                        Login
-                        <a href="List.html" class="navbar-icon bi-person smoothscroll"></a>
+                        <a href="contact.html" class="navbar-icon bi-person smoothscroll"></a>
+                        
                     </div>
     
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -83,9 +84,9 @@ https://templatemo.com/tm-590-topic-listing
                         </ul>
 
                         <div class="d-none d-lg-block">
-                            Login
-                            <a href="List.html" class="navbar-icon bi-person smoothscroll"></a>
-    
+                            <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+                        </div>
+                    </div>
                 </div>
             </nav>
             
@@ -93,35 +94,91 @@ https://templatemo.com/tm-590-topic-listing
             <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
                 <div class="container">
                     <div class="row">
-                        <div class="login-container">
-                            <h2>Login</h2>
-                            <form>
-                                <div class="form-floating">
-
-                              <label for="floatingInput">Username</label><input type="text" name="name" id="name" class="form-control" placeholder="Username" required="">
-                                    
-                                </div>
-                                <div class="form-floating">
-                                    <label for="password">Password</label>
-                                    </label><input type="text" name="password" id="password" class="form-control" placeholder="Password" required="">
-                                </div>
-                                <button href="List.html" type="submit">Login</button>
-                            </form>
-                        </div>
+                        <button href="Admin.html" type="submit" class="form-control" onclick="LoginToAdmin()">Admin</button>
+                        <button href="" type="submit" class="form-control">Donor</button>
+                        <button href="" type="submit" class="form-control">Organization</button>
                     </div>
                 </div>
-             </section>
-
-
-           
-      
+            </section>
+            <footer class="site-footer section-padding">
+                <div class="container">
+                    <div class="row">
     
-            </main>
+                        <div class="col-lg-3 col-12 mb-4 pb-2">
+                            <a class="navbar-brand mb-2" href="index.html">
+                                <i class="bi-back"></i>
+                                <span>DonApp</span>
+                            </a>
+                        </div>
+    
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <h6 class="site-footer-title mb-3">Resources</h6>
+    
+                            <ul class="site-footer-links">
+                                <li class="site-footer-link-item">
+                                    <a href="#" class="site-footer-link">Home</a>
+                                </li>
+    
+                                <li class="site-footer-link-item">
+                                    <a href="#" class="site-footer-link">How it works</a>
+                                </li>
+    
+                                <li class="site-footer-link-item">
+                                    <a href="#" class="site-footer-link">FAQs</a>
+                                </li>
+    
+                                <li class="site-footer-link-item">
+                                    <a href="#" class="site-footer-link">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+    
+                        <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
+                            <h6 class="site-footer-title mb-3">Information</h6>
+    
+                            <p class="text-white d-flex mb-1">
+                                <a href="tel: 305-240-9671" class="site-footer-link">
+                                    305-240-9671
+                                </a>
+                            </p>
+    
+                            <p class="text-white d-flex">
+                                <a href="mailto:info@company.com" class="site-footer-link">
+                                    info@company.com
+                                </a>
+                            </p>
+                        </div>
+    
+                        <div class="col-lg-3 col-md-4 col-12 mt-4 mt-lg-0 ms-auto">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                English</button>
+    
+                                <ul class="dropdown-menu">
+                                    <li><button class="dropdown-item" type="button">Thai</button></li>
+    
+                                    <li><button class="dropdown-item" type="button">Myanmar</button></li>
+    
+                                    <li><button class="dropdown-item" type="button">Arabic</button></li>
+                                </ul>
+                            </div>
+    
+                            <p class="copyright-text mt-lg-5 mt-4">Copyright © 2048 Topic Listing Center. All rights reserved.
+                            <br><br>Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+                            
+                        </div>
+    
+                    </div>
+                </div>
+            </footer>
+    
 
-           <!-- JAVASCRIPT FILES -->
-           <script src="js/jquery.min.js"></script>
-           <script src="js/bootstrap.bundle.min.js"></script>
-           <script src="js/jquery.sticky.js"></script>
-           <script src="js/click-scroll.js"></script>
-           <script src="js/custom.js"></script>
-        <html>
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/click-scroll.js"></script>
+        <script src="js/custom.js"></script>
+
+    </body>
+</html>
