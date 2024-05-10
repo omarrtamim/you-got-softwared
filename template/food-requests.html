@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Food Donation Requests</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/templatemo-topic-listing.css" rel="stylesheet">
+    <style>
+        .food-details {
+            display: none;
+            margin-left: 20px;
+        }
+        .food-item {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header d-flex flex-column justify-content-center align-items-center">
+        <h2>Food Donation Requests</h2>
+    </header>
+
+    <main class="container">
+        <form id="food-filter" class="mb-4">
+            <label for="food-type">Food Type:</label>
+            <select id="food-type">
+                <option value="all">All</option>
+                <option value="fruits-vegetables">Fruits and Vegetables</option>
+                <option value="canned-foods">Canned Foods</option>
+                <option value="fresh-meals">Fresh Meals</option>
+                <option value="baked-goods">Baked Goods</option>
+            </select>
+
+            <button type="button" onclick="filterFood()">Filter</button>
+        </form>
+
+        <ul id="food-list">
+            <!-- Example food items (more than 8), with expandable details -->
+            <li class="food-item" data-type="fruits-vegetables" onclick="toggleDetails('apples')">
+                <img src="images/apples.png" alt="Fresh Apples" style="width:50px;"> Fresh Apples (Fruits and Vegetables)
+                <div id="apples" class="food-details" onclick="event.stopPropagation()">
+                    <p>Max Quantity Needed: 20 kg</p>
+                    <input type="number" id="quantity-apples" max="20" min="1" value="1">
+                    <input type="checkbox" id="select-apples"> Donate
+                </div>
+            </li>
+            <li class="food-item" data-type="fruits-vegetables" onclick="toggleDetails('bananas')">
+                <img src="images/bananas.png" alt="Bananas" style="width:50px;"> Bananas (Fruits and Vegetables)
+                <div id="bananas" class="food-details" onclick="event.stopPropagation()">
+                    <p>Max Quantity Needed: 15 kg</p>
+                    <input type="number" id="quantity-bananas" max="15" min="1" value="1">
+                    <input type="checkbox" id="select-bananas"> Donate
+                </div>
+            </li>
+            <li class="food-item" data-type="canned-foods" onclick="toggleDetails('canned-peas')">
+                <img src="images/canned-peas.png" alt="Canned Peas" style="width:50px;"> Canned Peas (Canned Foods)
+                <div id="canned-peas" class="food-details" onclick="event.stopPropagation()">
+                    <p>Max Quantity Needed: 25 cans</p>
+                    <input type="number" id="quantity-canned-peas" max="25" min="1" value="1">
+                    <input type="checkbox" id="select-canned-peas"> Donate
+                </div>
+            </li>
+            <li class="food-item" data-type="canned-foods" onclick="toggleDetails('canned-tuna')">
+                <img src="images/canned-tuna.png" alt="Canned Tuna" style="width:50px;"> Canned Tuna (Canned Foods)
+                <div id="canned-tuna" class="food-details" onclick="event.stopPropagation()">
+                    <p>Max Quantity Needed: 30 cans</p>
+                    <input type="number" id="quantity-canned-tuna" max="30" min="1" value="1">
+                    <input type="checkbox" id="select-canned-tuna"> Donate
+                </div>
+            </li>
+            <li class="food-item" data-type="fresh-meals" onclick="toggleDetails('spaghetti')">
+                <img src="images/spaghetti.png" alt="Spaghetti Dinner" style="width:50px;"> Spaghetti Dinner (Fresh Meals)
+                <div id="spaghetti" class="food-details" onclick="event.stopPropagation()">
+                    <p>Max Quantity Needed: 10 meals</p>
+                    <input type="number" id="quantity-spaghetti" max="10" min="1" value="1">
+                    <input type="checkbox" id="select-spaghetti"> Donate
+                </div>
+            </li>
+            <li class="food-item" data-type="fresh-meals" onclick="toggleDetails('chicken-salad')">
+                <img src="images/chicken-salad.png" alt="Chicken Salad" style="width:50px;"> Chicken Salad (Fresh Meals)
+                <div id="chicken-salad" class="food-details" onclick="event.stopPropagation()">
+                    <p>Max Quantity Needed: 12 meals</p>
+                    <input type="number" id="quantity-chicken-salad" max="12" min="1" value="1">
+                    <input type="checkbox" id="select-chicken-salad"> Donate
+                </div>
+            </li>
+            <li class="food-item" data-type="baked-goods" onclick="toggleDetails('bread-loaves')">
+                <img src="images/bread-loaves.png" alt="Bread Loaves" style="width:50px;"> Bread Loaves (Baked Goods)
+                <div id="bread-loaves" class="food-details" onclick="event.stopPropagation()">
+                    <p>Max Quantity Needed: 18 loaves</p>
+                    <input type="number" id="quantity-bread-loaves" max="18" min="1" value="1">
+                    <input type="checkbox" id="select-bread-loaves"> Donate
+                </div>
+            </li>
+            <li class="food-item" data-type="baked-goods" onclick="toggleDetails('muffins')">
+                <img src="images/muffins.png" alt="Muffins" style="width:50px;"> Muffins (Baked Goods)
+                <div id="muffins" class="food-details" onclick="event.stopPropagation()">
+                    <p>Max Quantity Needed: 16 packs</p>
+                    <input type="number" id="quantity-muffins" max="16" min="1" value="1">
+                    <input type="checkbox" id="select-muffins"> Donate
+                </div>
+            </li>
+        </ul>
+    </main>
+
+    <script>
+        // Toggle visibility of details section
+        function toggleDetails(id) {
+            const details = document.getElementById(id);
+            details.style.display = details.style.display === 'none' || details.style.display === '' ? 'block' : 'none';
+        }
+
+        // Filtering function for food items
+        function filterFood() {
+            const type = document.getElementById('food-type').value;
+            const items = document.querySelectorAll('.food-item');
+
+            items.forEach(item => {
+                const itemType = item.getAttribute('data-type');
+                const matchType = type === 'all' || type === itemType;
+
+                if (matchType) {
+                    item.style.display = 'list-item';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

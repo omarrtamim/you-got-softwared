@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Toy Donation Requests</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/templatemo-topic-listing.css" rel="stylesheet">
+    <style>
+        .toy-details {
+            display: none;
+            margin-left: 20px;
+        }
+        .toy-item {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header d-flex flex-column justify-content-center align-items-center">
+        <h2>Toy Donation Requests</h2>
+    </header>
+
+    <main class="container">
+        <form id="toy-filter" class="mb-4">
+            <label for="age-group">Age Group:</label>
+            <select id="age-group">
+                <option value="all">All</option>
+                <option value="children">Children</option>
+                <option value="toddlers">Toddlers</option>
+            </select>
+
+            <label for="category">Category:</label>
+            <select id="category">
+                <option value="all">All</option>
+                <option value="board-games">Board Games</option>
+                <option value="stuffed-toys">Stuffed Toys</option>
+                <option value="dolls">Dolls</option>
+                <option value="cars">Cars</option>
+                <option value="outdoor">Outdoor</option>
+            </select>
+
+            <button type="button" onclick="filterToys()">Filter</button>
+        </form>
+
+        <ul id="toy-list">
+            <!-- Example toy items (at least 8), with expandable details -->
+            <li class="toy-item" data-age="children" data-category="board-games" onclick="toggleDetails('chess-set')">
+                <img src="images/chess-set.png" alt="Chess Set" style="width:50px;"> Chess Set (Children, Board Games)
+                <div id="chess-set" class="toy-details" onclick="event.stopPropagation()">
+                    <p>Max Quantity Needed: 10</p>
+                    <input type="number" id="quantity-chess-set" max="10" min="1" value="1">
+                    <input type="checkbox" id="select-chess-set"> Donate
+                </div>
+            </li>
+            <li class="toy-item" data-age="children" data-category="stuffed-toys" onclick="toggleDetails('teddy-bear')">
+                <img src="images/teddy-bear.png" alt="Teddy Bear" style="width:50px;"> Teddy Bear (Children, Stuffed Toys)
+                <div id="teddy-bear" class="toy-details" onclick="event.stopPropagation()">
+                    <p>Max Quantity Needed: 15</p>
+                    <input type="number" id="quantity-teddy-bear" max="15" min="1" value="1">
+                    <input type="checkbox" id="select-teddy-bear"> Donate
+                </div>
+            </li>
+            <li class="toy-item" data-age="children" data-category="dolls" onclick="toggleDetails('barbie-doll')">
+                <img src="images/barbie-doll.png" alt="Barbie Doll" style="width:50px;"> Barbie Doll (Children, Dolls)
+                <div id="barbie-doll" class="toy-details" onclick="event.stopPropagation()">
+                    <p>Max Quantity Needed: 8</p>
+                    <input type="number" id="quantity-barbie-doll" max="8" min="1" value="1">
+                    <input type="checkbox" id="select-barbie-doll"> Donate
+                </div>
+            </li>
+        </ul>
+    </main>
+
+    <script>
+        // Toggle visibility of details section
+        function toggleDetails(id) {
+            const details = document.getElementById(id);
+            details.style.display = details.style.display === 'none' || details.style.display === '' ? 'block' : 'none';
+        }
+
+        // Filtering function for toys
+        function filterToys() {
+            const ageGroup = document.getElementById('age-group').value;
+            const category = document.getElementById('category').value;
+            const items = document.querySelectorAll('.toy-item');
+
+            items.forEach(item => {
+                const age = item.getAttribute('data-age');
+                const itemCategory = item.getAttribute('data-category');
+
+                const matchAge = ageGroup === 'all' || ageGroup === age;
+                const matchCategory = category === 'all' || category === itemCategory;
+
+                if (matchAge && matchCategory) {
+                    item.style.display = 'list-item';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,96 +1,133 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Clothes Donation Requests</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/templatemo-topic-listing.css" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Clothes Donation Requests</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/templatemo-topic-listing.css" rel="stylesheet">
+    <style>
+        .clothes-details {
+            display: none; /* Initially hidden */
+            margin-left: 20px;
+        }
+        .clothes-item {
+            cursor: pointer;
+        }
+    </style>
+</head>
 
-    <body>
-        <header class="site-header d-flex flex-column justify-content-center align-items-center">
-            <h2>Clothes Donation Requests</h2>
-        </header>
+<body>
+    <header class="site-header d-flex flex-column justify-content-center align-items-center">
+        <h2>Clothes Donation Requests</h2>
+    </header>
 
-        <main class="container">
-            <form id="clothes-filter" class="mb-4">
-                <label for="age-group">Age Group:</label>
-                <select id="age-group">
-                    <option value="all">All</option>
-                    <option value="children">Children</option>
-                    <option value="adults">Adults</option>
-                </select>
+    <main class="container">
+        <form id="clothes-filter" class="mb-4">
+            <label for="age-group">Age Group:</label>
+            <select id="age-group">
+                <option value="all">All</option>
+                <option value="children">Children</option>
+                <option value="adults">Adults</option>
+            </select>
 
-                <label for="gender">Gender:</label>
-                <select id="gender">
-                    <option value="all">All</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
+            <label for="gender">Gender:</label>
+            <select id="gender">
+                <option value="all">All</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
 
-                <label for="season">Season:</label>
-                <select id="season">
-                    <option value="all">All</option>
-                    <option value="summer">Summer</option>
-                    <option value="winter">Winter</option>
-                </select>
+            <label for="season">Season:</label>
+            <select id="season">
+                <option value="all">All</option>
+                <option value="summer">Summer</option>
+                <option value="winter">Winter</option>
+            </select>
 
-                <button type="button" onclick="filterClothes()">Filter</button>
-            </form>
+            <button type="button" onclick="filterClothes()">Filter</button>
+        </form>
 
-            <ul id="clothes-list">
-                <!-- Example clothing items (at least 8) -->
-                <li class="clothes-item" data-age="children" data-gender="male" data-season="winter">
-                    Boys' Winter Jacket (Children, Male, Winter)
-                </li>
-                <li class="clothes-item" data-age="children" data-gender="female" data-season="summer">
-                    Girls' Summer Dress (Children, Female, Summer)
-                </li>
-                <li class="clothes-item" data-age="adults" data-gender="male" data-season="winter">
-                    Men's Winter Coat (Adults, Male, Winter)
-                </li>
-                <li class="clothes-item" data-age="adults" data-gender="female" data-season="summer">
-                    Women's Summer Skirt (Adults, Female, Summer)
-                </li>
-                <li class="clothes-item" data-age="children" data-gender="male" data-season="summer">
-                    Boys' T-shirt (Children, Male, Summer)
-                </li>
-                <li class="clothes-item" data-age="adults" data-gender="female" data-season="winter">
-                    Women's Winter Sweater (Adults, Female, Winter)
-                </li>
-                <li class="clothes-item" data-age="children" data-gender="female" data-season="winter">
-                    Girls' Sweater (Children, Female, Winter)
-                </li>
-                <li class="clothes-item" data-age="adults" data-gender="male" data-season="summer">
-                    Men's Polo Shirt (Adults, Male, Summer)
-                </li>
-            </ul>
-        </main>
+        <ul id="clothes-list">
+            <!-- Example clothing items (at least 8), with expandable details -->
+            <li class="clothes-item" data-age="children" data-gender="male" data-season="winter" onclick="toggleDetails('boys-jacket')">
+                <img src="images/boys-jacket.png" alt="Boys' Jacket" style="width:50px;"> Boys' Winter Jacket (Children, Male, Winter)
+                <div id="boys-jacket" class="clothes-details" onclick="event.stopPropagation()">
+                    <p>Material: Polyester</p>
+                    <p>Max Quantity Needed: 10</p>
+                    <input type="number" id="quantity-boys-jacket" max="10" min="1" value="1">
+                    <input type="checkbox" id="select-boys-jacket"> Donate
+                </div>
+            </li>
+            <li class="clothes-item" data-age="children" data-gender="female" data-season="summer" onclick="toggleDetails('girls-dress')">
+                <img src="images/girls-dress.png" alt="Girls' Dress" style="width:50px;"> Girls' Summer Dress (Children, Female, Summer)
+                <div id="girls-dress" class="clothes-details" onclick="event.stopPropagation()">
+                    <p>Material: Cotton</p>
+                    <p>Max Quantity Needed: 8</p>
+                    <input type="number" id="quantity-girls-dress" max="8" min="1" value="1">
+                    <input type="checkbox" id="select-girls-dress"> Donate
+                </div>
+            </li>
+            <li class="clothes-item" data-age="adults" data-gender="male" data-season="winter" onclick="toggleDetails('mens-coat')">
+                <img src="images/mens-coat.png" alt="Men's Coat" style="width:50px;"> Men's Winter Coat (Adults, Male, Winter)
+                <div id="mens-coat" class="clothes-details" onclick="event.stopPropagation()">
+                    <p>Material: Wool</p>
+                    <p>Max Quantity Needed: 12</p>
+                    <input type="number" id="quantity-mens-coat" max="12" min="1" value="1">
+                    <input type="checkbox" id="select-mens-coat"> Donate
+                </div>
+            </li>
+            <li class="clothes-item" data-age="adults" data-gender="female" data-season="summer" onclick="toggleDetails('womens-skirt')">
+                <img src="images/womens-skirt.png" alt="Women's Skirt" style="width:50px;"> Women's Summer Skirt (Adults, Female, Summer)
+                <div id="womens-skirt" class="clothes-details" onclick="event.stopPropagation()">
+                    <p>Material: Silk</p>
+                    <p>Max Quantity Needed: 7</p>
+                    <input type="number" id="quantity-womens-skirt" max="7" min="1" value="1">
+                    <input type="checkbox" id="select-womens-skirt"> Donate
+                </div>
+            </li>
+            <li class="clothes-item" data-age="children" data-gender="male" data-season="summer" onclick="toggleDetails('boys-tshirt')">
+                <img src="images/boys-tshirt.png" alt="Boys' T-shirt" style="width:50px;"> Boys' T-shirt (Children, Male, Summer)
+                <div id="boys-tshirt" class="clothes-details" onclick="event.stopPropagation()">
+                    <p>Material: Cotton</p>
+                    <p>Max Quantity Needed: 15</p>
+                    <input type="number" id="quantity-boys-tshirt" max="15" min="1" value="1">
+                    <input type="checkbox" id="select-boys-tshirt"> Donate
+                </div>
+            </li>
+        </ul>
+    </main>
 
-        <script>
-            function filterClothes() {
-                const ageGroup = document.getElementById('age-group').value;
-                const gender = document.getElementById('gender').value;
-                const season = document.getElementById('season').value;
-                const items = document.querySelectorAll('.clothes-item');
+    <script>
+        // Toggle visibility of details section
+        function toggleDetails(id) {
+            const details = document.getElementById(id);
+            details.style.display = details.style.display === 'none' || details.style.display === '' ? 'block' : 'none';
+        }
 
-                items.forEach(item => {
-                    const age = item.getAttribute('data-age');
-                    const itemGender = item.getAttribute('data-gender');
-                    const itemSeason = item.getAttribute('data-season');
+        // Filtering function for clothing items
+        function filterClothes() {
+            const ageGroup = document.getElementById('age-group').value;
+            const gender = document.getElementById('gender').value;
+            const season = document.getElementById('season').value;
+            const items = document.querySelectorAll('.clothes-item');
 
-                    const matchAge = ageGroup === 'all' || ageGroup === age;
-                    const matchGender = gender === 'all' || gender === itemGender;
-                    const matchSeason = season === 'all' || season === itemSeason;
+            items.forEach(item => {
+                const age = item.getAttribute('data-age');
+                const itemGender = item.getAttribute('data-gender');
+                const itemSeason = item.getAttribute('data-season');
 
-                    if (matchAge && matchGender && matchSeason) {
-                        item.style.display = 'list-item';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            }
-        </script>
-    </body>
+                const matchAge = ageGroup === 'all' || ageGroup === age;
+                const matchGender = gender === 'all' || gender === itemGender;
+                const matchSeason = season === 'all' || season === itemSeason;
+
+                if (matchAge && matchGender && matchSeason) {
+                    item.style.display = 'list-item';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
 </html>
