@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>School Supplies Donation Requests</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/templatemo-topic-listing.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <header class="site-header d-flex flex-column justify-content-center align-items-center">
+            <h2>School Supplies Donation Requests</h2>
+        </header>
+
+        <main class="container">
+            <form id="supplies-filter" class="mb-4">
+                <label for="category">Category:</label>
+                <select id="category">
+                    <option value="all">All</option>
+                    <option value="books">Books</option>
+                    <option value="stationery">Stationery</option>
+                </select>
+
+                <button type="button" onclick="filterSupplies()">Filter</button>
+            </form>
+
+            <ul id="supplies-list">
+                <!-- Example supply items (at least 8) -->
+                <li class="supply-item" data-category="books">
+                    Math Textbook (Books)
+                </li>
+                <li class="supply-item" data-category="books">
+                    History Workbook (Books)
+                </li>
+                <li class="supply-item" data-category="stationery">
+                    Pack of Pencils (Stationery)
+                </li>
+                <li class="supply-item" data-category="stationery">
+                    Colored Markers (Stationery)
+                </li>
+                <li class="supply-item" data-category="books">
+                    English Grammar Guide (Books)
+                </li>
+                <li class="supply-item" data-category="stationery">
+                    Notebook Set (Stationery)
+                </li>
+                <li class="supply-item" data-category="stationery">
+                    Highlighter Pens (Stationery)
+                </li>
+                <li class="supply-item" data-category="books">
+                    Science Project Guide (Books)
+                </li>
+            </ul>
+        </main>
+
+        <script>
+            function filterSupplies() {
+                const category = document.getElementById('category').value;
+                const items = document.querySelectorAll('.supply-item');
+
+                items.forEach(item => {
+                    const itemCategory = item.getAttribute('data-category');
+                    const matchCategory = category === 'all' || category === itemCategory;
+
+                    if (matchCategory) {
+                        item.style.display = 'list-item';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>
