@@ -1,26 +1,54 @@
-// organizations.js
-
-// Sample organizations data (replace with actual data from your server or database)
+// Sample data for organizations (replace with actual data from your system)
 const organizationsData = [
-    { id: 1, name: 'Organization A', location: 'City A' },
-    { id: 2, name: 'Organization B', location: 'City B' },
-    { id: 3, name: 'Organization C', location: 'City C' }
+    { name: 'Al Oraman', type: 'Non-profit', area: 'Area 1', governorate: 'Cairo', contact: 'info@aloraman.org' },
+    { name: 'Resala', type: 'Charity', area: 'Area 2', governorate: 'Alexandria', contact: 'contact@resala.org' },
+    { name: '57357', type: 'Hospital', area: 'Area 3', governorate: 'Giza', contact: 'info@57357.org' }
 ];
 
-// Function to display organizations
-function displayOrganizations() {
-    const organizationsList = document.getElementById('organizations');
+// Function to display organizations list
+function displayOrganizations(organizations) {
+    const organizationsList = document.getElementById('organizations-list');
+    organizationsList.innerHTML = ''; // Clear previous list
 
-    // Clear existing list items
-    organizationsList.innerHTML = 'orga';
+    organizations.forEach(org => {
+        const organizationItem = document.createElement('div');
+        organizationItem.classList.add('organization-item');
 
-    // Iterate over organizations data and create list items
-    organizationsData.forEach(organization => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${organization.name} - ${organization.location}`;
-        organizationsList.appendChild(listItem);
+        const nameElement = document.createElement('h2');
+        nameElement.textContent = org.name;
+
+        const typeElement = document.createElement('p');
+        typeElement.textContent = `Type: ${org.type}`;
+
+        const areaElement = document.createElement('p');
+        areaElement.textContent = `Area: ${org.area}`;
+
+        const governorateElement = document.createElement('p');
+        governorateElement.textContent = `Governorate: ${org.governorate}`;
+
+        const contactElement = document.createElement('p');
+        contactElement.textContent = `Contact: ${org.contact}`;
+
+        organizationItem.appendChild(nameElement);
+        organizationItem.appendChild(typeElement);
+        organizationItem.appendChild(areaElement);
+        organizationItem.appendChild(governorateElement);
+        organizationItem.appendChild(contactElement);
+
+        organizationsList.appendChild(organizationItem);
     });
 }
 
-// Call the displayOrganizations function when the page loads
-window.onload = displayOrganizations;
+// Function to filter organizations by search input
+function filterOrganizations() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const filteredOrganizations = organizationsData.filter(org => org.name.toLowerCase().includes(searchInput));
+    displayOrganizations(filteredOrganizations);
+}
+
+// Call functions when the page loads
+window.onload = function() {
+    displayOrganizations(organizationsData);
+
+    document.getElementById('searchInput').addEventListener('input', filterOrganizations);
+};
