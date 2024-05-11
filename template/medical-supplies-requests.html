@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Medical Supplies Donation Requests</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/templatemo-topic-listing.css" rel="stylesheet">
+    <style>
+        .medical-details {
+            display: none;
+            margin-left: 20px;
+        }
+        .medical-item {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header d-flex flex-column justify-content-center align-items-center">
+        <h2>Medical Supplies Donation Requests</h2>
+    </header>
+
+    <main class="container">
+        <form id="medical-filter" class="mb-4">
+            <label for="medical-type">Type:</label>
+            <select id="medical-type">
+                <option value="all">All</option>
+                <option value="medical-devices">Medical Devices</option>
+                <option value="equipment">Equipment</option>
+                <option value="medications">Medications</option>
+            </select>
+
+            <button type="button" onclick="filterMedical()">Filter</button>
+        </form>
+
+        <ul id="medical-list">
+            <!-- Example medical items (more than 8), with expandable details -->
+            <li class="medical-item" data-type="medical-devices" onclick="toggleDetails('bp-monitor')">
+                <img src="images/bp-monitor.png" alt="Blood Pressure Monitor" style="width:50px;">  (Medical Devices)
+                <div id="bp-monitor" class="medical-details" onclick="event.stopPropagation()">
+                    <p>Max Quantity Needed: 8</p>
+                    <input type="number" id="quantity-bp-monitor" max="8" min="1" value="1">
+                    <input type="checkbox" id="select-bp-monitor"> Donate
+                </div>
+            </li>
+            <li class="medical-item" data-type="medical-devices" onclick="toggleDetails('glucose-meter')">
+                <img src="images/glucose-meter.png" alt="Glucose Meter" style="width:50px;">  (Medical Devices)
+                <div id="glucose-meter" class="medical-details" onclick="event.stopPropagation()">
+                    <p>Max Quantity Needed: 10</p>
+                    <input type="number" id="quantity-glucose-meter" max="10" min="1" value="1">
+                    <input type="checkbox" id="select-glucose-meter"> Donate
+                </div>
+            </li>
+            <li class="medical-item" data-type="medical-devices" onclick="toggleDetails('pulse-oximeter')">
+                <img src="images/pulse-oximeter.png" alt="Pulse Oximeter" style="width:50px;">  (Medical Devices)
+                <div id="pulse-oximeter" class="medical-details" onclick="event.stopPropagation()">
+                    <p>Max Quantity Needed: 14</p>
+                    <input type="number" id="quantity-pulse-oximeter" max="14" min="1" value="1">
+                    <input type="checkbox" id="select-pulse-oximeter"> Donate
+                </div>
+            </li>
+            <li class="medical-item" data-type="equipment" onclick="toggleDetails('wheelchair')">
+                <img src="images/wheelchair.png" alt="Wheelchair" style="width:50px;">  (Equipment)
+                <div id="wheelchair" class="medical-details" onclick="event.stopPropagation()">
+                    <p>Max Quantity Needed: 6</p>
+                    <input type="number" id="quantity-wheelchair" max="6" min="1" value="1">
+                    <input type="checkbox" id="select-wheelchair"> Donate
+                </div>
+            </li>
+            <li class="medical-item" data-type="equipment" onclick="toggleDetails('stretcher')">
+                <img src="images/stretcher.png" alt="Stretcher" style="width:50px;">  (Equipment)
+                <div id="stretcher" class="medical-details" onclick="event.stopPropagation()">
+                    <p>Max Quantity Needed: 4</p>
+                    <input type="number" id="quantity-stretcher" max="4" min="1" value="1">
+                    <input type="checkbox" id="select-stretcher"> Donate
+                </div>
+            </li>
+            <li class="medical-item" data-type="medications" onclick="toggleDetails('pain-relief')">
+                <img src="images/pain-relief.png" alt="Pain Relief Tablets" style="width:50px;">  (Medications)
+                <div id="pain-relief" class="medical-details" onclick="event.stopPropagation()">
+                    <p>Max Quantity Needed: 30 packs</p>
+                    <input type="number" id="quantity-pain-relief" max="30" min="1" value="1">
+                    <input type="checkbox" id="select-pain-relief"> Donate
+                </div>
+            </li>
+            <li class="medical-item" data-type="medications" onclick="toggleDetails('cough-syrup')">
+                <img src="images/cough-syrup.png" alt="Cough Syrup" style="width:50px;">  (Medications)
+                <div id="cough-syrup" class="medical-details" onclick="event.stopPropagation()">
+                    <p>Max Quantity Needed: 20 bottles</p>
+                    <input type="number" id="quantity-cough-syrup" max="20" min="1" value="1">
+                    <input type="checkbox" id="select-cough-syrup"> Donate
+                </div>
+            </li>
+            <li class="medical-item" data-type="medications" onclick="toggleDetails('antibiotic-ointment')">
+                <img src="images/antibiotic-ointment.png" alt="Antibiotic Ointment" style="width:50px;">  (Medications)
+                <div id="antibiotic-ointment" class="medical-details" onclick="event.stopPropagation()">
+                    <p>Max Quantity Needed: 25 tubes</p>
+                    <input type="number" id="quantity-antibiotic-ointment" max="25" min="1" value="1">
+                    <input type="checkbox" id="select-antibiotic-ointment"> Donate
+                </div>
+            </li>
+        </ul>
+    </main>
+
+    <script>
+        
+        function toggleDetails(id) {
+            const details = document.getElementById(id);
+            details.style.display = details.style.display === 'none' || details.style.display === '' ? 'block' : 'none';
+        }
+
+       
+        function filterMedical() {
+            const type = document.getElementById('medical-type').value;
+            const items = document.querySelectorAll('.medical-item');
+
+            items.forEach(item => {
+                const itemType = item.getAttribute('data-type');
+                const matchType = type === 'all' || type === itemType;
+
+                if (matchType) {
+                    item.style.display = 'list-item';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
