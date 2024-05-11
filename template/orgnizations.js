@@ -1,3 +1,4 @@
+// Sample data for organizations (replace with actual data from your system)
 const organizationsData = [
     { name: 'Al Oraman', type: 'Non-profit', area: 'Area 1', governorate: 'Cairo', contact: 'info@aloraman.org' },
     { name: 'Resala', type: 'Charity', area: 'Area 2', governorate: 'Alexandria', contact: 'contact@resala.org' },
@@ -45,52 +46,9 @@ function filterOrganizations() {
     displayOrganizations(filteredOrganizations);
 }
 
-// Function to populate filter options
-function populateFilterOptions() {
-    const areas = [...new Set(organizationsData.map(org => org.area))];
-    const governorates = [...new Set(organizationsData.map(org => org.governorate))];
-    const types = [...new Set(organizationsData.map(org => org.type))];
+// Call functions when the page loads
+window.onload = function() {
+    displayOrganizations(organizationsData);
 
-    const areaFilter = document.getElementById('areaFilter');
-    const governorateFilter = document.getElementById('governorateFilter');
-    const typeFilter = document.getElementById('typeFilter');
-
-    areas.forEach(area => {
-        const option = document.createElement('option');
-        option.textContent = area;
-        option.value = area;
-        areaFilter.appendChild(option);
-    });
-
-    governorates.forEach(gov => {
-        const option = document.createElement('option');
-        option.textContent = gov;
-        option.value = gov;
-        governorateFilter.appendChild(option);
-    });
-
-    types.forEach(type => {
-        const option = document.createElement('option');
-        option.textContent = type;
-        option.value = type;
-        typeFilter.appendChild(option);
-    });
-}
-
-// Function to filter organizations by filter options
-function applyFilters() {
-    const areaFilterValue = document.getElementById('areaFilter').value;
-    const governorateFilterValue = document.getElementById('governorateFilter').value;
-    const typeFilterValue = document.getElementById('typeFilter').value;
-
-    let filteredOrganizations = [...organizationsData];
-
-    if (areaFilterValue) {
-        filteredOrganizations = filteredOrganizations.filter
-
-
-    }
-}
-
-
-
+    document.getElementById('searchInput').addEventListener('input', filterOrganizations);
+};
