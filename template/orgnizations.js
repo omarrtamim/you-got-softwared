@@ -1,7 +1,7 @@
 const organizationsData = [
-    { name: 'Organization 1', type: 'Non-profit', area: 'Area 1', governorate: 'Governorate 1', contact: 'organization1@example.com' },
-    { name: 'Organization 2', type: 'Charity', area: 'Area 2', governorate: 'Governorate 2', contact: 'organization2@example.com' },
-    // Add more organizations as needed
+    { name: 'Al Oraman', type: 'Non-profit', area: 'Area 1', governorate: 'Cairo', contact: 'info@aloraman.org' },
+    { name: 'Resala', type: 'Charity', area: 'Area 2', governorate: 'Alexandria', contact: 'contact@resala.org' },
+    { name: '57357', type: 'Hospital', area: 'Area 3', governorate: 'Giza', contact: 'info@57357.org' }
 ];
 
 // Function to display organizations list
@@ -89,7 +89,8 @@ function applyFilters() {
         filteredOrganizations = filteredOrganizations.filter
 
 
-
+    }
+}
 
 
 
