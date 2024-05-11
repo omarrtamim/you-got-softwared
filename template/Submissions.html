@@ -95,12 +95,38 @@ https://templatemo.com/tm-590-topic-listing
                 <div class="container">
                     <div class="row">
                         <ul>
-                            <li>Item 1</li>
-                            <li>Item 2</li>
-                            <li>Item 3</li>
-                        </ul>
-                       
+                                <div class="input-group input-group-lg">
+                                    <span class="input-group-text bi-search" id="basic-addon1">
 
+                                    </span>
+                                    <input name="keyword" type="search" class="form-control" id="keyword" placeholder="Organization" aria-label="Search">
+
+                                    <button type="submit" class="form-control">Search</button>
+                                </div>
+                            <div>
+                                <label for="areaFilter">Area:</label>
+                                <select id="areaFilter"class="form-control">
+                                    <option value="">Cairo</option>
+                                    <option value="">Tanta</option>
+                                    <option value="">All</option>
+                                    <!-- Add options dynamically using JavaScript -->
+                                </select>
+                                <label for="governorateFilter">Governorate:</label>
+                                <select id="governorateFilter"class="form-control">
+                                    <option value="">All</option>
+                                    <!-- Add options dynamically using JavaScript -->
+                                </select>
+                                <label for="typeFilter">Type:</label>
+                                <select id="typeFilter"class="form-control">
+                                    <option value="">All</option>
+                                    <!-- Add options dynamically using JavaScript -->
+                                </select>
+                            </div>
+                        
+                            <!-- Organizations list -->
+                            <div id="organizations-list"></div>
+                        
+                            <script src="organizations.js"></script>
 
                     </div>
                 </div>
