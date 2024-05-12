@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Topic Listing Page</title>
+        <title>Topic Detail Page</title>
 
         <!-- CSS FILES -->        
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +30,7 @@ https://templatemo.com/tm-590-topic-listing
 -->
     </head>
     
-    <body class="Donors List" id="top">
+    <body id="top">
 
         <main>
 
@@ -52,7 +52,7 @@ https://templatemo.com/tm-590-topic-listing
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-lg-5 me-lg-auto">
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="index.html">Home</a>
+                                <a class="nav-link click-scroll" href="index.html#section_1">Home</a>
                             </li>
 
                             <li class="nav-item">
@@ -75,9 +75,9 @@ https://templatemo.com/tm-590-topic-listing
                                 <a class="nav-link dropdown-toggle" href="#section_5" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
 
                                 <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
-                                    <li><a class="dropdown-item active" href="topics-listing.html">Donors List</a></li>
+                                    <li><a class="dropdown-item" href="topics-listing.html">Topics Listing</a></li>
 
-                                    <li><a class="dropdown-item" href="contact.html">Organization LIst</a></li>
+                                    <li><a class="dropdown-item" href="contact.html">Contact Form</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -88,120 +88,69 @@ https://templatemo.com/tm-590-topic-listing
                     </div>
                 </div>
             </nav>
-
+            
 
             <header class="site-header d-flex flex-column justify-content-center align-items-center">
                 <div class="container">
-                    <div class="row align-items-center">
+                    <div class="row justify-content-center align-items-center">
 
-                        <div class="col-lg-5 col-12">
+                        <div class="col-lg-5 col-12 mb-5">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Homepage</a></li>
+                                    <li class="breadcrumb-item"><a href="Dashboard.html">Homepage</a></li>
 
-                                    <li class="breadcrumb-item active" aria-current="page">Donors List</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Fatima Mohammed</li>
                                 </ol>
                             </nav>
 
-                            <h2 class="text-white">Donors List</h2>
+                            <h2 class="text-white">Fatima Mohammed</h2>
+
+                            <div class="d-flex align-items-center mt-5">
+                               </div>
                         </div>
+
+                       
 
                     </div>
                 </div>
             </header>
 
 
-            <section class="section-padding">
+            <section class="topics-detail-section section-padding" id="topics-detail">
                 <div class="container">
                     <div class="row">
-
-                        <div class="col-lg-12 col-12 text-center">
-                            <h3 class="mb-4">Donors</h3>
-                        </div>
-
-                        <div class="col-lg-8 col-12 mt-3 mx-auto">
-                            <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
-                                <div class="d-flex">
-                                    <img src="D:\New GitHub\yougotsoftwared\template\images\Man.jpeg" class="custom-block-image img-fluid" alt="">
-
-                                    <div class="custom-block-topics-listing-info d-flex">
-                                        <div>
-                                            <h5 class="mb-2">Ahmed Ali</h5>
-
-                                            <p class="mb-0">subject: 'Mathematics', experience: '10 years', location: 'Cairo', bio: 'Experienced mathematics teacher with a passion for helping students understand complex concepts.'</p>
-
-                                            <a href="AA.html" class="btn custom-btn mt-3 mt-lg-4">View</a>
-                                            <button class="btn custom-btn mt-3 mt-lg-4" onclick="deleteDonor('Ahmed Ali')">Delete</button>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
-                                <div class="d-flex">
-                                    <img src="D:\New GitHub\yougotsoftwared\template\images\Woman.png" class="custom-block-image img-fluid" alt="">
-
-                                    <div class="custom-block-topics-listing-info d-flex">
-                                        <div>
-                                            <h5 class="mb-2">Fatima Mohammed</h5>
-
-                                            <p class="mb-0"> subject: 'Science', experience: '8 years', location: 'Cairo', bio: 'Dedicated science teacher committed to fostering a love for learning in students.' </p>
-
-                                            <a href="FM.html" class="btn custom-btn mt-3 mt-lg-4">View</a>
-                                            <button class="btn custom-btn mt-3 mt-lg-4" onclick="deleteDonor('Fatima Mohammed')">Delete</button>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
-                                <div class="d-flex">
-                                    <img src="D:\New GitHub\yougotsoftwared\template\images\Man.jpeg" class="custom-block-image img-fluid" alt="">
-
-                                    <div class="custom-block-topics-listing-info d-flex">
-                                        <div>
-                                            <h5 class="mb-2">Dr. Mohammed Ibrahim</h5>
-
-                                            <p class="mb-0">specialty: 'Orthopedic Surgeon', experience: '20 years', location: 'Cairo', bio: 'Expert orthopedic surgeon specializing in joint replacement surgeries and sports medicine.'</p>
-
-                                            <a href="MI.html" class="btn custom-btn mt-3 mt-lg-4">View</a>
-                                            <button class="btn custom-btn mt-3 mt-lg-4" onclick="deleteDonor('Dr. Mohammed Ibrahim')">Delete</button>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-12 col-12">
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination justify-content-center mb-0">
-                                    
-                                </ul>
-                            </nav>
-                        </div>
+                        <h3>Ahmed Ali</h3>
+                        <p>Subject: Mathematics</p>
+                        <p>Experience: 10 years</p>
+                        <p>Location: Cairo</p>
+                        <p>Bio: Experienced mathematics teacher with a passion for helping students understand complex concepts.</p>
+                        <p>Contact: ahmed@example.com</p>
+                            <div class="row my-4">
+                                <div class="col-lg-6 col-md-6 col-12">
+                     
 
                     </div>
-                    <script src="DeleteAccount.js"></script>
                 </div>
             </section>
 
 
             <section class="section-padding section-bg">
                 <div class="container">
-                    <div class="row">
-                        
+                    <div class="row justify-content-center">
+
+  
+                        <div class="col-lg-5 col-12 subscribe-form-wrap d-flex justify-content-center align-items-center">
+                            <form class="custom-form subscribe-form" action="#" method="post" role="form">
+                                 
+                            </form>
+                        </div>
+
                     </div>
                 </div>
             </section>
         </main>
-
-		<footer class="site-footer section-padding">
+		
+        <footer class="site-footer section-padding">
             <div class="container">
                 <div class="row">
 
