@@ -41,6 +41,7 @@ https://templatemo.com/tm-590-topic-listing
                     </a>
 
                     <div class="d-lg-none ms-auto me-4">
+                        Login
                         <a href="List.html" class="navbar-icon bi-person smoothscroll"></a>
                     </div>
     
@@ -92,22 +93,59 @@ https://templatemo.com/tm-590-topic-listing
             <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
                 <div class="container">
                     <div class="row">
-                        <h2>Login for Admins</h2>
-                       <form id="login-form">
-                       <div class="form-group">
-                     <label for="username">Username:</label>
-                       <input type="text" id="username" name="username" required class="form-control">
-                       </div>
-                      <div class="form-group">
-                      <label for="password">Password:</label>
-                      <input type="password" id="password" name="password" required class="form-control">
-                      </div>
-                      <button type="submit" class="btn custom-btn mt-3 mt-lg-4">Login</button>
-                       </form>
-                       <p><a href="password-reset.html"class="btn custom-btn mt-3 mt-lg-4">Forgot password ?</a></p>
+                        <div class="login-container">
+                            <h2>Login</h2>
+                            <form>
+                                <!DOCTYPE html>
+<html>
+<head>
+    <title>Organization Registration</title>
+</head>
+<body>
+    <h1>Registration for Organizations</h1>
+    <form action="Orgregister.html" method="post">
+        <label for="firstName">First Name:</label><br>
+        <input type="text" id="firstName" name="firstName" required><br><br>
 
-                         <script src="Login.js"></script>
-                    </div>
+        <label for="lastName">Last Name:</label><br>
+        <input type="text" id="lastName" name="lastName" required><br><br>
+
+        <label for="gender">Gender:</label><br>
+        <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="contactNumber">Contact Number:</label><br>
+        <input type="text" id="contactNumber" name="contactNumber" required><br><br>
+
+        <label for="organizationName">Organization Name:</label><br>
+        <input type="text" id="organizationName" name="organizationName" required><br><br>
+
+        <label for="organizationType">Organization Type:</label><br>
+        <input type="text" id="organizationType" name="organizationType" required><br><br>
+
+        <label for="organizationAddress">Organization Address:</label><br>
+        <input type="text" id="organizationAddress" name="organizationAddress" required><br><br>
+
+        <label for="area">Area:</label><br>
+        <input type="text" id="area" name="area" required><br><br>
+
+        <label for="governorate">Governorate:</label><br>
+        <input type="text" id="governorate" name="governorate" required><br><br>
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
+
                 </div>
              </section>
 
