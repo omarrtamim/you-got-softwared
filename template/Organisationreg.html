@@ -140,6 +140,57 @@ https://templatemo.com/tm-590-topic-listing
 
         <label for="governorate">Governorate:</label><br>
         <input type="text" id="governorate" name="governorate" required><br><br>
+       
+        <div id="map"></div>
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Hospital Location</title>
+          <style>
+            /* Style for map container */
+            #map {
+              height: 400px;
+              width: 100%;
+            }
+          </style>
+        </head>
+        <body>
+          <h1>Organisation Location</h1>
+          <!-- Embedding Google Maps with iframe -->
+          <iframe
+            id="map"
+            width="600"
+            height="450"
+            frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7080512126685!2d-74.00639368573535!3d40.71435319257475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2598c8e5d0bf7%3A0xf1295b6e19146d8e!2sTimes%20Square%2C%20New%20York%2C%20NY%2010018%2C%20USA!5e0!3m2!1sen!2s!4v1636101449404!5m2!1sen!2s"
+            allowfullscreen>
+          </iframe>
+
+          <html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document Upload</title>
+</head>
+<body>
+
+<h2>Document Upload for Organization Verification</h2>
+
+<form action="/upload" method="post" enctype="multipart/form-data">
+  <label for="document">Upload Document:</label>
+  <input type="file" id="document" name="document" accept=".pdf,.doc,.docx">
+  <input type="submit" value="Upload">
+</form>
+
+</body>
+</html>
+        </body>
+        </html> 
+
+       
+
 
         <a href="Orgregister.html" type="submit" class="btn custom-btn mt-3 mt-lg-4">Register</a>
     </form>
