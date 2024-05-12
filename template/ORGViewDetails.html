@@ -91,58 +91,146 @@ https://templatemo.com/tm-590-topic-listing
                 </div>
             </nav>
             
-
-            <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
+            <header class="site-header d-flex flex-column justify-content-center align-items-center">
                 <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5 col-12">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Homepage</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Organization's  Fulfilled Posts</li>
+                                </ol>
+                            </nav>
+                            <h2 class="text-white">Organization's  Fulfilled Posts</h2>
+                        </div>
+                    </div>
+                </div>
+            </header>
 
+            <footer class="site-footer section-padding">
+                <div class="container">
                     <div class="row">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Organization Dashboard</title>
-</head>
-<body>
-    <h1>Welcome to Your Organization's Dashboard</h1>
+                    </head>
+                    <body>                        
+                        <!-- Fulfilled Donation Posts List -->
+                        <div id="fulfilled-donation-posts">
+                            <!-- Example Fulfilled Donation Post -->
+                            <div class="fulfilled-donation-post" id="post1">
+                                <h2>Donation Title</h2>
+                                <button onclick="toggleDetails('post1')">View Details</button>
+                                <div id="details-post1" style="display: none;">
+                                    <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <p>Amount: $1000</p>
+                                    <p>Target: $5000</p>
+                                    <p>Fulfilled Date: 2024-05-11</p>
+                                    <!-- Add more details here as needed -->
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Details Modal -->
+                        <div id="details-modal" style="display: none;">
+                            <!-- Details will be populated here -->
+                        </div>
+                    
+                        <script>
+                            // Function to toggle visibility of details of a fulfilled donation post
+                            function toggleDetails(postId) {
+                                var details = document.getElementById(`details-${postId}`);
+                                var detailsModal = document.getElementById("details-modal");
+                    
+                                // Hide the modal if it's visible
+                                if (detailsModal.style.display === "block") {
+                                    detailsModal.style.display = "none";
+                                    return; // Exit the function
+                                }
+                    
+                                // Toggle visibility of the details for the selected post
+                                if (details.style.display === "block") {
+                                    details.style.display = "none";
+                                } else {
+                                    details.style.display = "block";
+                                }
+                            }
+                        </script>  
+                </div>
+                        <div class="col-lg-3 col-12 mb-4 pb-2">
+                            <a class="navbar-brand mb-2" href="index.html">
+                                
+                            </a>
+                        </div>
     
-    <!-- Fulfilled Donation Posts List -->
-    <div id="fulfilled-donation-posts">
-        <!-- Example Fulfilled Donation Post -->
-        <div class="fulfilled-donation-post" id="post1">
-            <h2>Donation Title</h2>
-            <button onclick="toggleDetails('post1')">View Details</button>
-            <div id="details-post1" style="display: none;">
-                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p>Amount: $1000</p>
-                <p>Target: $5000</p>
-                <p>Fulfilled Date: 2024-05-11</p>
-                <!-- Add more details here as needed -->
-            </div>
-        </div>
-    </div>
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <h6 class="site-footer-title mb-3">Resources</h6>
+    
+                            <ul class="site-footer-links">
+                                <li class="site-footer-link-item">
+                                    <a href="#" class="site-footer-link">Home</a>
+                                </li>
+    
+                                <li class="site-footer-link-item">
+                                    <a href="#" class="site-footer-link">How it works</a>
+                                </li>
+    
+                                <li class="site-footer-link-item">
+                                    <a href="#" class="site-footer-link">FAQs</a>
+                                </li>
+    
+                                <li class="site-footer-link-item">
+                                    <a href="#" class="site-footer-link">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+    
+                        <div class="col-lg-3 col-md-4 col-6 mb-4 mb-lg-0">
+                            <h6 class="site-footer-title mb-3">Information</h6>
+    
+                            <p class="text-white d-flex mb-1">
+                                <a href="tel: 305-240-9671" class="site-footer-link">
+                                    305-240-9671
+                                </a>
+                            </p>
+    
+                            <p class="text-white d-flex">
+                                <a href="mailto:info@company.com" class="site-footer-link">
+                                    info@company.com
+                                </a>
+                            </p>
+                        </div>
+    
+                        <div class="col-lg-3 col-md-4 col-12 mt-4 mt-lg-0 ms-auto">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                English</button>
+    
+                                <ul class="dropdown-menu">
+                                    <li><button class="dropdown-item" type="button">Thai</button></li>
+    
+                                    <li><button class="dropdown-item" type="button">Myanmar</button></li>
+    
+                                    <li><button class="dropdown-item" type="button">Arabic</button></li>
+                                </ul>
+                            </div>
+    
+                            <p class="copyright-text mt-lg-5 mt-4">Copyright © 2048 Topic Listing Center. All rights reserved.
+                            <br><br>Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+                            
+                        </div>
+    
+                    </div>
+                </div>
+            </footer>
+    
 
-    <!-- Details Modal -->
-    <div id="details-modal" style="display: none;">
-        <!-- Details will be populated here -->
-    </div>
 
-    <script>
-        // Function to toggle visibility of details of a fulfilled donation post
-        function toggleDetails(postId) {
-            var details = document.getElementById(`details-${postId}`);
-            var detailsModal = document.getElementById("details-modal");
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/click-scroll.js"></script>
+        <script src="js/custom.js"></script>
 
-            // Hide the modal if it's visible
-            if (detailsModal.style.display === "block") {
-                detailsModal.style.display = "none";
-                return; // Exit the function
-            }
+    </body>
+</html>
 
-            // Toggle visibility of the details for the selected post
-            if (details.style.display === "block") {
-                details.style.display = "none";
-            } else {
-                details.style.display = "block";
-            }
-        }
-    </script>
-</body>
-
+           
