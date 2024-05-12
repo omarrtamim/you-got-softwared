@@ -121,24 +121,30 @@
                             <h5>Al-Orman Charity Association</h5>
                             <p>Dar Al- Orman is an Egyptian charity registered under no. 1158 Giza. Established in 1993, it started its activities with one orphanage to provide care for orphans.</p>
                             <a href="O.html" class="btn custom-btn mt-3 mt-lg-4">View</a>
+                            <a href="#" onclick="deleteOrganization(this)" class="btn custom-btn mt-3 mt-lg-4">Delete</a>
+
 
                         </div>
                         <div class="organization-item" data-area="Maadi" data-governorate="cairo" data-type="nonprofit">
                             <h5>Resala Charity Organization</h5>
                             <p>An Egyptian nonprofit organisation that aims to assist the Egyptian community through blood donation, orphan care, blind aid, literacy instruction, and other services.</p>
                             <a href="R.html" class="btn custom-btn mt-3 mt-lg-4">View</a>
+                            <a href="#" onclick="deleteOrganization(this)" class="btn custom-btn mt-3 mt-lg-4">Delete</a>
+
 
                         </div>
                         <div class="organization-item" data-area="nasr city" data-governorate="cairo" data-type="charity">
                             <h5>Childrens Cancer Hospital Egypt 57357</h5>
                             <p>Children's Cancer Hospital Egypt, also known as 57357 hospital after the hospital's widely published bank account number for donations, is a hospital in Cairo specializing in children's cancer. With 320 beds, the building is the largest pediatric oncology hospital in the world.</p>
                             <a href="C.html" class="btn custom-btn mt-3 mt-lg-4">View</a>
+                            <a href="#" onclick="deleteOrganization(this)" class="btn custom-btn mt-3 mt-lg-4">Delete</a>
+
 
                         </div>
                     </div>
                 </div>
             </section>
-                                    
+
                     </div>
                 </div>
             </section>
@@ -215,7 +221,14 @@
                 </div>
             </div>
         </footer>
-
+     <script >
+            function deleteOrganization(element) {
+               
+               const block = element.closest('.custom-block');
+               block.innerHTML = '<div class="alert alert-danger" role="alert">Deleted</div>';
+           }
+           
+        </script>
         <!-- JAVASCRIPT FILES -->
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>
