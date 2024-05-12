@@ -37,13 +37,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     acceptButtons.forEach(button => {
         button.addEventListener('click', function() {
-            acceptOrganization(button);
+            acceptDonors(button);
         });
     });
 
     rejectButtons.forEach(button => {
         button.addEventListener('click', function() {
-            rejectOrganization(button);
+            rejectDonors(button);
         });
     });
 });
