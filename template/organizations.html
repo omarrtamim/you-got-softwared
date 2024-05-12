@@ -97,18 +97,48 @@ https://templatemo.com/tm-590-topic-listing
                         <div class="col-lg-5 col-12">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Homepage</a></li>
+                                    <li class="breadcrumb-item"><a href="Dashboard.html">Homepage</a></li>
 
-                                    <li class="breadcrumb-item active" aria-current="page">Topics Listing</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Organization List</li>
                                 </ol>
                             </nav>
 
                             <h2 class="text-white">Organization</h2>
                             <input type="text" id="searchInput" placeholder="Search for organization" class="form-control">
-                            <button onclick="searchOrganizations()" class="btn custom-btn mt-3 mt-lg-4">Search</button>                           
+                            <button onclick="searchOrganizations()" class="btn custom-btn mt-3 mt-lg-4">Search</button>
+                            <br/>                           
+                            <label for="area-filter">Area:</label>
+                            <select class="form-control" id="area-filter">
+                            <option value="all">All</option>
+                            <option value="nasr city">Nasr City</option>
+                            <option value="Maadi">Maadi</option>
+                            </select>
 
-                        </div>
+                            <label for="governorate-filter">Governorate:</label>
+                            <select class="form-control" id="governorate-filter">
+                            <option value="all">All</option>
+                            <option value="cairo">Cairo</option>
+                            <option value="alexandria">Alexandria</option>
+                            <!-- Add more options as needed -->
+                            </select>
 
+                            <label for="type-filter">Organization Type:</label>
+                            <select class="form-control" id="type-filter">
+                            <option value="all">All</option>
+                            <option value="charity">Charity</option>
+                            <option value="nonprofit">Non-Profit</option>
+                            <!-- Add more options as needed -->
+                            </select>
+
+                            <!-- Button to trigger filtering -->
+                            <button onclick="filterOrganizations()"class="btn custom-btn mt-3 mt-lg-4">Filter</button>
+
+                            <!-- List of organizations -->
+                           <div id="organizations-list">
+                          <!-- Insert organizations dynamically here -->
+                           </div>
+                         </div>
+                         <script src="filterOrganizations.js"></script>
                     </div>
                 </div>
             </header>
@@ -175,12 +205,12 @@ https://templatemo.com/tm-590-topic-listing
                                             <button class="btn custom-btn mt-3 mt-lg-4" onclick="deleteOrganization('Childrens Cancer Hospital Egypt')">Delete</button>
 
                                         </div>
-
                                     </div>
             
                                 </div>
                             </div>
                             <script src="Description.js"></script>
+                            <script src="DeleteORG.js"></script>
                         </div>
 
                         <div class="col-lg-12 col-12">
