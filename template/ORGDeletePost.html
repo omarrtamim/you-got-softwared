@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Topic Listing Bootstrap 5 Template</title>
+        <title>Topic Listing Page</title>
 
         <!-- CSS FILES -->        
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +20,7 @@
 
         <link href="css/bootstrap-icons.css" rel="stylesheet">
 
-        <link href="css/templatemo-topic-listing.css" rel="stylesheet">      
+        <link href="css/templatemo-topic-listing.css" rel="stylesheet">
 <!--
 
 TemplateMo 590 topic listing
@@ -30,7 +30,7 @@ https://templatemo.com/tm-590-topic-listing
 -->
     </head>
     
-    <body id="top">
+    <body class="Organization List" id="top">
 
         <main>
 
@@ -42,8 +42,7 @@ https://templatemo.com/tm-590-topic-listing
                     </a>
 
                     <div class="d-lg-none ms-auto me-4">
-                        <a href="contact.html" class="navbar-icon bi-person smoothscroll"></a>
-                        
+                        <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
                     </div>
     
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,30 +52,30 @@ https://templatemo.com/tm-590-topic-listing
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-lg-5 me-lg-auto">
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_1">Home</a>
+                                <a class="nav-link click-scroll" href="index.html#section_1">Home</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_2">Browse Topics</a>
+                                <a class="nav-link click-scroll" href="index.html#section_2">Browse Topics</a>
                             </li>
     
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_3">How it works</a>
+                                <a class="nav-link click-scroll" href="index.html#section_3">How it works</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_4">FAQs</a>
+                                <a class="nav-link click-scroll" href="index.html#section_4">FAQs</a>
                             </li>
     
                             <li class="nav-item">
-                                <a class="nav-link click-scroll" href="#section_5">Contact</a>
+                                <a class="nav-link click-scroll" href="index.html#section_5">Contact</a>
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                                <a class="nav-link dropdown-toggle" href="#section_5" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
 
                                 <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="topics-listing.html">Topics Listing</a></li>
+                                    <li><a class="dropdown-item active" href="topics-listing.html">Topics Listing</a></li>
 
                                     <li><a class="dropdown-item" href="contact.html">Contact Form</a></li>
                                 </ul>
@@ -89,86 +88,107 @@ https://templatemo.com/tm-590-topic-listing
                     </div>
                 </div>
             </nav>
-            
 
-            <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
+
+            <header class="site-header d-flex flex-column justify-content-center align-items-center">
                 <div class="container">
-                    <div class="container">
-                        <div class="row align-items-center">
-    
-                            <div class="col-lg-5 col-12">
-                                <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="Dashboard.html">Homepage</a></li>
-    
-                                        <li class="breadcrumb-item active" aria-current="page">Organization List</li>
-                                    </ol>
-                                </nav>
+                    <div class="row align-items-center">
+
+                        <div class="col-lg-5 col-12">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="Dashboard.html">Homepage</a></li>
+
+                                    <li class="breadcrumb-item active" aria-current="page">Organization List</li>
+                                </ol>
+                            </nav>
                     <!DOCTYPE html>
                     <html lang="en">
                     <head>
                         <meta charset="UTF-8">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <title>View Donor Details for Fulfilled Posts</title>
+                        <title>Delete Fulfilled Donation Posts</title>
                     </head>
                     <body>
-                        <h1>View Donor Details for Fulfilled Posts</h1>
+                        <h1>Delete Fulfilled Donation Posts</h1>
                         
-                      
+                        <!-- Example of a Fulfilled Donation Post -->
+                       
                     
-                        <!-- Donor Details Modal -->
-                        <div id="donorDetailsModal" class="modal">
+                        <!-- Confirmation Modal -->
+                        <div id="deleteConfirmationModal" class="modal">
                             <div class="modal-content">
                                 <span class="close" onclick="closeModal()">&times;</span>
-                                <h2>Donor Details</h2>
-                                <!-- Placeholder for donor details -->
-                                <p>Name: Donor Name</p>
-                                <p>Email: donor@example.com</p>
-                                <p>Phone: +1234567890</p>
-                                <!-- Additional donor information -->
-                                <p>Occupation: Teacher</p>
-                                <p>Location: City, Country</p>
+                                <p>Are you sure you want to delete this post?</p>
+                                <a href = "Postdeleted.html">
+                                <button onclick="deletePost()">Yes, Delete</button>
+                                </a>
+                                <button onclick="closeModal()">Cancel</button>
                             </div>
                         </div>
                     
-                        <!-- Script to handle viewing donor details -->
+                        <!-- Script to handle deletion -->
                         <script>
-                            function viewDonorDetails(postId) {
-                                // Display the donor details modal
-                                var modal = document.getElementById('donorDetailsModal');
+                            function confirmDelete(postId) {
+                                // Store the ID of the post to be deleted
+                                sessionStorage.setItem('postId', postId);
+                                
+                                // Display the confirmation modal
+                                var modal = document.getElementById('deleteConfirmationModal');
                                 modal.style.display = 'block';
                             }
                     
                             function closeModal() {
-                                // Close the donor details modal
-                                var modal = document.getElementById('donorDetailsModal');
+                                // Close the confirmation modal
+                                var modal = document.getElementById('deleteConfirmationModal');
                                 modal.style.display = 'none';
+                            }
+                    
+                            function deletePost() {
+                                // Retrieve the ID of the post to be deleted
+                                var postId = sessionStorage.getItem('postId');
+                                
+                                // Delete the post with the given ID (You can add your backend logic here)
+                                var postElement = document.getElementById(postId);
+                                postElement.remove();
+                    
+                                // Clear the stored post ID
+                                sessionStorage.removeItem('postId');
+                                
+                                // After successful deletion, redirect to success page
+                                window.location.href = 'postdeleted.html';
                             }
                             
                         </script>
                     </body>
                     </html>
-                </br>          
+                                   
 </body>
 </html>
-</html>
 </div>
 </div>
-</section>
+
+</main>
+ <!-- Example of a Fulfilled Donation Post -->
+ <div class="donation-post" id="post1">
+    <h2>Donation Post Title</h2>
+    <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut mauris vel libero hendrerit consequat.</p>
+    <p>Posted By: Organization Name</p>
+    <p>Date Posted: January 1, 2024</p>
+    <!-- Add delete button -->
+    <button onclick="confirmDelete('post1')">Delete</button>
+</div>
 <footer class="site-footer section-padding">
 <div class="container">
-    
-    <div class="fulfilled-post" id="post1">
-        <h2>Fulfilled Donation Post Title</h2>
-        <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut mauris vel libero hendrerit consequat.</p>
-        <p>Fulfilled By: Donor Name</p>
-        <p>Donor Type: Teacher</p>
-        <p>Date Fulfilled: January 5, 2024</p>
-        <!-- Add button to view donor details -->
-        <button onclick="viewDonorDetails('post1')">View Donor Details</button>
-        
-    </div>
-</br>  
+    <div class="row">
+
+        <div class="col-lg-3 col-12 mb-4 pb-2">
+            <a class="navbar-brand mb-2" href="index.html">
+                <i class="bi-back"></i>
+                <span>DonApp</span>
+            </a>
+        </div>
+
         <div class="col-lg-3 col-md-4 col-6">
             <h6 class="site-footer-title mb-3">Resources</h6>
 
@@ -221,7 +241,7 @@ https://templatemo.com/tm-590-topic-listing
                 </ul>
             </div>
 
-            <p class="copyright-text mt-lg-5 mt-4">Copyright © 2048 Topic Listing Center. All rights reserved.
+            <p class="copyright-text mt-lg-5 mt-4">Copyright ©️ 2048 Topic Listing Center. All rights reserved.
             <br><br>Design: <a rel="nofollow" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
             
         </div>
@@ -230,13 +250,10 @@ https://templatemo.com/tm-590-topic-listing
 </div>
 </footer>
 
-
-
 <!-- JAVASCRIPT FILES -->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/jquery.sticky.js"></script>
-<script src="js/click-scroll.js"></script>
 <script src="js/custom.js"></script>
 
 </body>

@@ -94,104 +94,63 @@ https://templatemo.com/tm-590-topic-listing
             <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
                 <div class="container">
 
-                    <div class="row">
+                    <!DOCTYPE html>
+<html lang="en">
+<head>
+        <div class="container">
+            <div class="row align-items-center">
 
+                <div class="col-lg-5 col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="Dashboard.html">Homepage</a></li>
+
+                            <li class="breadcrumb-item active" aria-current="page">Organization List</li>
+                        </ol>
+                    </nav>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Donor Details</title>
-    <style>
-        /* Modal CSS */
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgba(0,0,0,0.4); /* Black with opacity */
-        }
-
-        /* Modal Content CSS */
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto; /* 15% from the top and centered */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%; /* Could be more or less, depending on screen size */
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            border-radius: 10px;
-        }
-
-        /* Close Button CSS */
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
+    <title>View Donor Contact Details for Fulfilled Posts</title>
 </head>
 <body>
-    <h1>View Donor Details</h1>
+    <h1>View Donor Contact Details for Fulfilled Posts</h1>
     
-    <!-- Example Fulfilled Donation Post -->
-    <div class="fulfilled-donation-post" id="post1">
-        <h2>Donation Title</h2>
-        <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <!-- Other details here -->
-        <button onclick="viewDonorDetails('post1')">View Donor Details</button>
-    </div>
+    <!-- Example of a Fulfilled Donation Post -->
+   
 
-    <!-- Donor Details Modal -->
-    <div id="donor-details-modal" class="modal">
+    <!-- Donor Contact Details Modal -->
+    <div id="donorContactModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Donor Details</h2>
-            <p id="donor-name"></p>
-            <p id="donor-email"></p>
-            <!-- Add more donor details here if needed -->
+            <h2>Donor Contact Details</h2>
+            <!-- Placeholder for donor contact details -->
+            <p>Name: Donor Name</p>
+            <p>Email: donor@example.com</p>
+            <p>Phone: +1234567890</p>
+            <!-- Additional donor information -->
+            <p>Occupation: Teacher</p>
+            <p>Location: City, Country</p>
         </div>
     </div>
+    
 
+    <!-- Script to handle viewing donor contact details -->
     <script>
-        // Function to view donor details for a fulfilled donation post
-        function viewDonorDetails(postId) {
-            // Send a GET request to the backend to fetch donor details
-            fetch(`/fulfilled-donation-posts/${postId}/donor-details`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log(data); // Log donor details
-                // Display donor details in the modal
-                document.getElementById('donor-name').innerText = `Name: ${data.name}`;
-                document.getElementById('donor-email').innerText = `Email: ${data.email}`;
-                // Show the modal
-                document.getElementById('donor-details-modal').style.display = 'block';
-            })
-            .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-                // Optionally, display an error message to the user
-            });
+        function viewDonorContact(postId) {
+            // Display the donor contact details modal
+            var modal = document.getElementById('donorContactModal');
+            modal.style.display = 'block';
         }
 
-        // Function to close the modal
         function closeModal() {
-            document.getElementById('donor-details-modal').style.display = 'none';
+            // Close the donor contact details modal
+            var modal = document.getElementById('donorContactModal');
+            modal.style.display = 'none';
         }
+        
     </script>
+</body>
+</html>
 </body>
 </html>
 </div>
@@ -200,7 +159,17 @@ https://templatemo.com/tm-590-topic-listing
 <footer class="site-footer section-padding">
 <div class="container">
     
-
+    <div class="fulfilled-post" id="post1">
+        <h2>Fulfilled Donation Post Title</h2>
+        <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut mauris vel libero hendrerit consequat.</p>
+        <p>Fulfilled By: Donor Name</p>
+        <p>Donor Type: Teacher</p>
+        <p>Date Fulfilled: January 5, 2024</p>
+        <!-- Add button to view donor contact details -->
+        <button onclick="viewDonorContact('post1')">View Donor Contact Details</button>
+    </div>
+</br>
+</br>
         <div class="col-lg-3 col-md-4 col-6">
             <h6 class="site-footer-title mb-3">Resources</h6>
 
