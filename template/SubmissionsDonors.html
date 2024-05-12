@@ -77,7 +77,7 @@ https://templatemo.com/tm-590-topic-listing
                                 <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
                                     <li><a class="dropdown-item active" href="topics-listing.html">Donors List</a></li>
 
-                                    <li><a class="dropdown-item" href="contact.html">Organization LIst</a></li>
+                                    <li><a class="dropdown-item" href="contact.html">Donor LIst</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -173,7 +173,6 @@ https://templatemo.com/tm-590-topic-listing
                                     </div>
                                 </div>
                             </div>
-                            <script src="SubmissionsDonors.js"></script>
                         </div>
 
                         <div class="col-lg-12 col-12">
@@ -275,6 +274,40 @@ https://templatemo.com/tm-590-topic-listing
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/jquery.sticky.js"></script>
         <script src="js/custom.js"></script>
-
+        <script>
+            function acceptDonors(element) {
+                // Alert that the Donor has been accepted
+                alert('Donors accepted.');
+                // Find the closest parent .custom-block div and hide it
+                element.closest('.custom-block').style.display = 'none';
+            }
+            
+            function rejectDonors(element) {
+               
+                const block = element.closest('.custom-block');
+                block.innerHTML = '<div class="alert alert-danger" role="alert">Rejected</div>';
+            }
+            
+            function filterDonors() {
+                
+                const areaFilter = document.getElementById("areaFilter").value;
+                const governorateFilter = document.getElementById("governorateFilter").value;
+                const typeFilter = document.getElementById("typeFilter").value;
+            
+               
+                const DonorsList = document.getElementById("DonorsList").getElementsByTagName("li");
+            
+                
+                for (let Donor of DonorsList) {
+                    const DonorDetails = Donor.textContent.toLowerCase();
+                    const shouldShow = (
+                        (areaFilter === "" || DonorDetails.includes(areaFilter.toLowerCase())) &&
+                        (governorateFilter === "" || DonorDetails.includes(governorateFilter.toLowerCase())) &&
+                        (typeFilter === "" || DonorDetails.includes(typeFilter.toLowerCase()))
+                    );
+                    Donor.style.display = shouldShow ? "block" : "none";
+                }
+            }
+            </script>
     </body>
 </html>
