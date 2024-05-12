@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Donation Pickup Scheduler</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .form-control, .btn, .modal-content {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Donation Pickup Scheduler</h2>
+    <form id="donation-form">
+        <!-- Transportation Selection -->
+        <label for="transportation">Choose transportation for pickup:</label>
+        <select id="transportation" class="form-control">
+            <option value="truck">Truck</option>
+            <option value="car">Car</option>
+            <option value="motorcycle">Motorcycle</option>
+        </select>
+
+        <!-- Schedule Selection for Pickup -->
+        <label for="pickup-time">Select a pickup time:</label>
+        <input type="time" id="pickup-time" class="form-control">
+
+        <!-- Schedule Selection for Drop-off -->
+        <label for="dropoff-time">Select a drop-off time:</label>
+        <input type="time" id="dropoff-time" class="form-control">
+
+        <!-- Submit Button -->
+        <button type="button" class="btn btn-primary" onclick="schedulePickup()">Schedule Pickup</button>
+    </form>
+</div>
+
+<!-- Modal for Driver ETA Notification -->
+<div class="modal fade" id="driverModal" tabindex="-1" aria-labelledby="driverModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="driverModalLabel">Driver Arrival Notification</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p id="modal-notification-text"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script>
+    function schedulePickup() {
+        const pickupTime = document.getElementById('pickup-time').value;
+        setTimeout(() => {
+           
+            const modalText = document.getElementById('modal-notification-text');
+            modalText.innerHTML = `Driver Mostafa will arrive on time. <br> Estimated Time of Arrival: ${pickupTime} <br> Contact: 555-1234`;
+            new bootstrap.Modal(document.getElementById('driverModal')).show();
+
+           
+            setTimeout(() => {
+                modalText.innerHTML = "Driver Mostafa has arrived!";
+                new bootstrap.Modal(document.getElementById('driverModal')).show();
+            }, 10000); // 10000 milliseconds = 10 seconds
+        }, 500); 
+    }
+</script>
+</body>
+</html>
